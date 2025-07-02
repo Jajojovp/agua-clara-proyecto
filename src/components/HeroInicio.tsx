@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -13,7 +12,7 @@ export const HeroInicio = () => {
     if (lluviaRef.current) {
       animate(
         lluviaRef.current,
-        { y: [0, 20, 0] },
+        { transform: ['translateY(0px)', 'translateY(20px)', 'translateY(0px)'] },
         { duration: 3, repeat: Infinity, easing: 'ease-in-out' }
       );
     }
@@ -22,7 +21,7 @@ export const HeroInicio = () => {
     if (tanqueRef.current) {
       animate(
         tanqueRef.current,
-        { scaleY: [0.2, 0.8, 0.2] },
+        { transform: ['scaleY(0.2)', 'scaleY(0.8)', 'scaleY(0.2)'] },
         { duration: 4, repeat: Infinity, easing: 'ease-out' }
       );
     }
