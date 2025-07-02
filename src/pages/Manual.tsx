@@ -259,7 +259,7 @@ const Manual = () => {
                           <li>• Caudal máximo: 1,200 L/h</li>
                           <li>• Presión operativa: 15-45 PSI</li>
                           <li>• Temperatura: 5-40°C</li>
-                          <li>• Eficiencia: 95% partículas >20 micrones</li>
+                          <li>• Eficiencia: 95% partículas {'>'}20 micrones</li>
                         </ul>
                       </div>
                     </div>
