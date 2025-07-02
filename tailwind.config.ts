@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,15 +53,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				agua: {
+					claro: 'hsl(var(--agua-claro))',
+					medio: 'hsl(var(--agua-medio))',
+					oscuro: 'hsl(var(--agua-oscuro))'
+				},
+				verde: {
+					rural: 'hsl(var(--verde-rural))',
+					claro: 'hsl(var(--verde-claro))'
 				}
 			},
 			borderRadius: {
@@ -69,26 +69,33 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+				'lluvia': {
+					'0%, 100%': { transform: 'translateY(-10px)', opacity: '0.7' },
+					'50%': { transform: 'translateY(0px)', opacity: '1' }
 				},
-				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+				'llenar-tanque': {
+					'0%': { height: '20%' },
+					'100%': { height: '80%' }
+				},
+				'ondas': {
+					'0%, 100%': { transform: 'translateX(0px)' },
+					'50%': { transform: 'translateX(10px)' }
+				},
+				'fade-in-up': {
+					'0%': { opacity: '0', transform: 'translateY(30px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'slide-in-right': {
+					'0%': { opacity: '0', transform: 'translateX(30px)' },
+					'100%': { opacity: '1', transform: 'translateX(0)' }
 				}
 			},
 			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'lluvia': 'lluvia 3s ease-in-out infinite',
+				'llenar-tanque': 'llenar-tanque 4s ease-out infinite alternate',
+				'ondas': 'ondas 2s ease-in-out infinite',
+				'fade-in-up': 'fade-in-up 0.8s ease-out',
+				'slide-in-right': 'slide-in-right 0.8s ease-out'
 			}
 		}
 	},
