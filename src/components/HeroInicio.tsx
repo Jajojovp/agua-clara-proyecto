@@ -1,32 +1,8 @@
-import { useEffect, useRef } from 'react';
+
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { animate } from 'motion';
 
 export const HeroInicio = () => {
-  const lluviaRef = useRef<HTMLDivElement>(null);
-  const tanqueRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Animación de lluvia
-    if (lluviaRef.current) {
-      animate(
-        lluviaRef.current,
-        { transform: ['translateY(0px)', 'translateY(20px)', 'translateY(0px)'] },
-        { duration: 3, repeat: Infinity, easing: 'ease-in-out' }
-      );
-    }
-
-    // Animación del tanque llenándose
-    if (tanqueRef.current) {
-      animate(
-        tanqueRef.current,
-        { transform: ['scaleY(0.2)', 'scaleY(0.8)', 'scaleY(0.2)'] },
-        { duration: 4, repeat: Infinity, easing: 'ease-out' }
-      );
-    }
-  }, []);
-
   return (
     <section className="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden">
       {/* Elementos de fondo animados */}
@@ -36,7 +12,7 @@ export const HeroInicio = () => {
         <div className="absolute top-16 right-20 w-24 h-16 bg-gray-300/15 rounded-full"></div>
         
         {/* Gotas de lluvia animadas */}
-        <div ref={lluviaRef} className="absolute top-40 left-1/4 w-1 h-20 bg-agua-claro/60 rounded-full"></div>
+        <div className="absolute top-40 left-1/4 w-1 h-20 bg-agua-claro/60 rounded-full animate-lluvia"></div>
         <div className="absolute top-32 left-1/3 w-1 h-16 bg-agua-claro/40 rounded-full animate-lluvia"></div>
         <div className="absolute top-36 right-1/3 w-1 h-24 bg-agua-claro/50 rounded-full animate-lluvia"></div>
       </div>
@@ -124,11 +100,7 @@ export const HeroInicio = () => {
                 {/* Tanque */}
                 <div className="flex justify-center">
                   <div className="w-24 h-32 bg-gray-200 rounded-lg border-2 border-gray-300 relative overflow-hidden">
-                    <div 
-                      ref={tanqueRef}
-                      className="absolute bottom-0 left-0 right-0 bg-agua-medio rounded-b-lg origin-bottom"
-                      style={{ height: '60%' }}
-                    ></div>
+                    <div className="absolute bottom-0 left-0 right-0 bg-agua-medio rounded-b-lg animate-llenar-tanque origin-bottom h-3/5"></div>
                     <div className="absolute top-2 right-2 text-xs font-medium text-gray-600">85%</div>
                   </div>
                 </div>
